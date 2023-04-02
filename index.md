@@ -1,0 +1,11 @@
+---
+layout: about
+permalink: /
+profile:
+  align: right
+  image: profile.png
+published: true
+---
+
+Hi, my name is Chris. I received my double B.S. in Computer Science and Mathematics from Delaware State University. Currently, I am a PhD candidate in Computer Science at the University of Illinois at Chicago, working with Professor <a href="http://www.cs.uic.edu/~elena">Elena Zheleva</a>.
+Currently, my main focus is in the realm of causal inference, particularly using machine learning for estimating heterogeneous treatment effects.
