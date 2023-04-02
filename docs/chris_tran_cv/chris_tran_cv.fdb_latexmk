@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1680358485 "d:/Libraries/OneDrive/Website/christran16/docs/Chris Tran CV/chris_tran_cv.tex" "chris_tran_cv.pdf" "chris_tran_cv" 1680358486 0
+["pdflatex"] 1680442774 "d:/Libraries/OneDrive/Website/christran16.github.io/docs/chris_tran_cv/chris_tran_cv.tex" "chris_tran_cv.pdf" "chris_tran_cv" 1680442776 0
   "C:/Users/chris/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1680358063 82507 a9eef8696c92627b87e9975edea03b2a ""
   "C:/Users/chris/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1680356176 23176373 d45f18a90f766e8d836a85ca81287cce ""
   "C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmbx10.tfm" 1136765053 1328 c834bbb027764024c09d3d2bf908b5f0 ""
@@ -76,10 +76,10 @@
   "C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/latex/varwidth/varwidth.sty" 1238469540 10894 d359a13923460b2a73d4312d613554c8 ""
   "C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1656236890 56148 51a9a8571c07b9921892ae11063ae853 ""
-  "chris_tran_cv.aux" 1659476007 32 3985256e7290058c681f74d7a3565a19 ""
-  "chris_tran_cv.tex" 1680358483 14884 4bab13e0e5025713e1623e1e551397c0 ""
-  "d:/Libraries/OneDrive/Website/christran16/docs/Chris Tran CV/chris_tran_cv.tex" 1680358483 14884 4bab13e0e5025713e1623e1e551397c0 ""
-  "simple_style.cls" 1617376822 29992 6f0707ee126ce570beb3edca4d15e6cc ""
+  "chris_tran_cv.aux" 1680398279 34 3985256e7290058c681f74d7a3565a19 ""
+  "chris_tran_cv.tex" 1680442770 15274 6c97f101f3f2896ce0d639b45ff08091 ""
+  "d:/Libraries/OneDrive/Website/christran16.github.io/docs/chris_tran_cv/chris_tran_cv.tex" 1680442770 15274 6c97f101f3f2896ce0d639b45ff08091 ""
+  "simple_style.cls" 1680398279 30918 6f0707ee126ce570beb3edca4d15e6cc ""
   (generated)
   "chris_tran_cv.log"
   "chris_tran_cv.pdf"

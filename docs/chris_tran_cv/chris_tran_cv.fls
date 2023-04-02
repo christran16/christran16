@@ -1,6 +1,6 @@
-PWD d:\Libraries\OneDrive\Website\christran16\docs\Chris Tran CV
+PWD d:\Libraries\OneDrive\Website\christran16.github.io\docs\chris_tran_cv
 INPUT C:\Users\chris\AppData\Local\MiKTeX\miktex\data\le\pdftex\pdflatex.fmt
-INPUT d:\Libraries\OneDrive\Website\christran16\docs\Chris Tran CV\chris_tran_cv.tex
+INPUT d:\Libraries\OneDrive\Website\christran16.github.io\docs\chris_tran_cv\chris_tran_cv.tex
 OUTPUT chris_tran_cv.log
 INPUT .\simple_style.cls
 INPUT .\simple_style.cls
