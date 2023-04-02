@@ -2,123 +2,26 @@
 layout: default
 ---
 
-Theme can be **dark** or **light** the color is dependent on your system theme so go ahead turn it dark.
-Text can be **bold**, _italic_, or ~~strikethrough~~ or <kbd>keyboard shortcuts</kbd>.
+# Selected Projects
 
-[Link to another page](./another-page.html).
+## Improving Data-driven Heterogeneous Treatment Effect Estimation Under Structure Uncertatinty
 
-There should be whitespace between paragraphs.
+Developed a data-driven feature selection for improving estimation of heterogeneous effects
 
-There should be whitespace between paragraphs. We recommend including a README, or a file with information about your project.
+[[Code]](https://github.com/edgeslab/causal_feature_selection) [[Paper]](https://dl.acm.org/doi/pdf/10.1145/3534678.3539444?casa_token=SJKBH0p_SEcAAAAA:ZtbYzbtmvKIseDgRojDmOPrkLYhfWGqIkmYcIG2sZb7EP-xWYIVidWxIuhDJ6oRu4KJVcdKqRHpIgg)
 
-# Header 1
+## Heterogeneous Peer Effects in the Linear Threshold Model
 
-This is a normal paragraph following a header. GitHub is a code hosting platform for version control and collaboration. It lets you and others work together on projects from anywhere.
+[[Code]](https://github.com/edgeslab/hpe-ltm) [[Paper]](https://www.aaai.org/AAAI22Papers/AAAI-11299.TranC.pdf)
 
-## Header 2
+## Heterogeneous Effects of Software Patches in a Multiplayer Online Battle Arena Game
 
-> This is a blockquote following a header.
->
-> When something is important enough, you do it even if the odds are not in your favor.
+[[Paper]](https://dl.acm.org/doi/pdf/10.1145/3472538.3472550)
 
-### Header 3
+## Helping Users Automatically Find and Manage Sensitive, Expendable Files in Cloud Storage
 
-```js
-// Javascript code with syntax highlighting.
-var fun = function lang(l) {
-  dateformat.i18n = require('./lang/' + l)
-  return true;
-}
-```
+[[App]](https://cloudsweeper.app/) [[Paper]](https://www.cs.uic.edu/~ctran/docs/khan-usenix2021.pdf)
 
-```ruby
-# Ruby code with syntax highlighting
-GitHubPages::Dependencies.gems.each do |gem, version|
-  s.add_dependency(gem, "= #{version}")
-end
-```
+## Learning Triggers for Heterogeneous Treatment Effects
 
-#### Header 4
-
-*   This is an unordered list following a header.
-*   This is an unordered list following a header.
-*   This is an unordered list following a header.
-
-##### Header 5
-
-1.  This is an ordered list following a header.
-2.  This is an ordered list following a header.
-3.  This is an ordered list following a header.
-
-###### Header 6
-
-| head1        | head two          | three |
-|:-------------|:------------------|:------|
-| ok           | good swedish fish | nice  |
-| out of stock | good and plenty   | nice  |
-| ok           | good `oreos`      | hmm   |
-| ok           | good `zoute` drop | yumm  |
-
-### There's a horizontal rule below this.
-
-* * *
-
-### Here is an unordered list:
-
-*   Item foo
-*   Item bar
-*   Item baz
-*   Item zip
-
-### And an ordered list:
-
-1.  Item one
-1.  Item two
-1.  Item three
-1.  Item four
-
-### And a nested list:
-
-- level 1 item
-  - level 2 item
-  - level 2 item
-    - level 3 item
-    - level 3 item
-- level 1 item
-  - level 2 item
-  - level 2 item
-  - level 2 item
-- level 1 item
-  - level 2 item
-  - level 2 item
-- level 1 item
-
-### Small image
-
-![Octocat](https://github.githubassets.com/images/icons/emoji/octocat.png)
-
-### Large image
-
-![Branching](https://guides.github.com/activities/hello-world/branching.png)
-
-
-### Definition lists can be used with HTML syntax.
-
-<dl>
-<dt>Name</dt>
-<dd>Godzilla</dd>
-<dt>Born</dt>
-<dd>1952</dd>
-<dt>Birthplace</dt>
-<dd>Japan</dd>
-<dt>Color</dt>
-<dd>Green</dd>
-</dl>
-
-```
-Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this.
-```
-
-```
-The final element.
-```
+[[Code]](https://github.com/edgeslab/CTL) [[Paper]](https://arxiv.org/pdf/1902.00087.pdf)
