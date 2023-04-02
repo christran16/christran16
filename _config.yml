@@ -3,8 +3,21 @@ logo: "/images/linkedin.jpg?raw=true" # your photo (or logo) here
 description: > # your text below (remove <br> elements if you don't need line breaks)
   <br>
   I am a Researcher at Smart Information Flow Technologies (SIFT) working on artificial intelligence and data science. I received my Ph.D. from the University of Illinois Chicago under the advisement of Elena Zheleva.
-  <br>
-  <a href="https://github.com/chris-tran-16"> <img src="files/github.png" alt="photo" style="width:32px;height:32px;" align="left" hspace="0"></a>
+  <br><br>
+  <div class="row">
+    <div class="column">
+      <a href="https://github.com/chris-tran-16"> <img src="files/github.png" alt="photo" style="width:32px;height:32px;" align="left" hspace="0"></a>
+    </div>
+    <div class="column">
+      <a href="https://twitter.com/chris_tran16"> <img src="files/twitter_black.svg" alt="photo" style="width:32px;height:32px;" align="left" hspace="5"></a>
+    </div>
+    <div class="column">
+      <a href="https://www.linkedin.com/in/christran16/"><img src="files/linkedin.png" alt="photo" style="width:32px;height:32px;" align="left" hspace="0"></a>
+    </div>
+    <div class="column">
+      <a href="mailto:chris.l.tran@gmail.com"><img src="files/email.png" alt="photo" style="width:32px;height:32px;" align="left" hspace="5"></a>
+    </div>
+  </div>
 
 theme: jekyll-theme-minimal
 google_analytics: UA-000000-0 # your Google Analytics tracking ID here
