@@ -1,5 +1,5 @@
-title: Christopher Tran # your name (or website title) here
-logo: "/files/chris_head.jpg?raw=true" # your photo (or logo) here
+title: Minimal theme
+logo: /assets/img/logo.png
 description: > # your text below (remove <br> elements if you don't need line breaks)
   <br>
   I am a Researcher at Smart Information Flow Technologies (SIFT) working on artificial intelligence and data science. I received my Ph.D. from the University of Illinois Chicago under the advisement of Elena Zheleva.
@@ -18,9 +18,7 @@ description: > # your text below (remove <br> elements if you don't need line br
       <a href="mailto:chris.l.tran@gmail.com"><img src="files/email.png" alt="photo" style="width:32px;height:32px;" align="left" hspace="5"></a>
     </div>
   </div>
-
+show_downloads: true
+google_analytics:
 theme: jekyll-theme-minimal
-google_analytics: UA-000000-0 # your Google Analytics tracking ID here
-
-colors:
-  crimson: '#900C3F'
+color-scheme: auto-default-dark
