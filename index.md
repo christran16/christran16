@@ -1,51 +1,124 @@
-<!-- ---
+---
 layout: default
---- -->
+---
 
-# Selected Projects
+Theme can be **dark** or **light** the color is dependent on your system theme so go ahead turn it dark.
+Text can be **bold**, _italic_, or ~~strikethrough~~ or <kbd>keyboard shortcuts</kbd>.
 
-## Improving Data-driven Heterogeneous Treatment Effect Estimation Under Structure Uncertatinty
+[Link to another page](./another-page.html).
 
-Developed a data-driven feature selection for improving estimation of heterogeneous effects
+There should be whitespace between paragraphs.
 
-[[Code]](https://github.com/edgeslab/causal_feature_selection) [[Paper]](https://dl.acm.org/doi/pdf/10.1145/3534678.3539444?casa_token=SJKBH0p_SEcAAAAA:ZtbYzbtmvKIseDgRojDmOPrkLYhfWGqIkmYcIG2sZb7EP-xWYIVidWxIuhDJ6oRu4KJVcdKqRHpIgg)
+There should be whitespace between paragraphs. We recommend including a README, or a file with information about your project.
 
-## Heterogeneous Peer Effects in the Linear Threshold Model
+# Header 1
 
-[[Code]](https://github.com/edgeslab/hpe-ltm) [[Paper]](https://www.aaai.org/AAAI22Papers/AAAI-11299.TranC.pdf)
+This is a normal paragraph following a header. GitHub is a code hosting platform for version control and collaboration. It lets you and others work together on projects from anywhere.
 
-## Heterogeneous Effects of Software Patches in a Multiplayer Online Battle Arena Game
+## Header 2
 
-[[Paper]](https://dl.acm.org/doi/pdf/10.1145/3472538.3472550)
+> This is a blockquote following a header.
+>
+> When something is important enough, you do it even if the odds are not in your favor.
 
-## Helping Users Automatically Find and Manage Sensitive, Expendable Files in Cloud Storage
+### Header 3
 
-[[App]](https://cloudsweeper.app/) [[Paper]](https://www.cs.uic.edu/~ctran/docs/khan-usenix2021.pdf)
+```js
+// Javascript code with syntax highlighting.
+var fun = function lang(l) {
+  dateformat.i18n = require('./lang/' + l)
+  return true;
+}
+```
 
-## Learning Triggers for Heterogeneous Treatment Effects
+```ruby
+# Ruby code with syntax highlighting
+GitHubPages::Dependencies.gems.each do |gem, version|
+  s.add_dependency(gem, "= #{version}")
+end
+```
 
-[[Code]](https://github.com/edgeslab/CTL) [[Paper]](https://arxiv.org/pdf/1902.00087.pdf)
+#### Header 4
 
-<!-- # Work Experience
+*   This is an unordered list following a header.
+*   This is an unordered list following a header.
+*   This is an unordered list following a header.
 
-## Researcher at Smart Information Flow Technologies (SIFT)
+##### Header 5
 
-- Developed and implemented algorithms for detecting novelties in different domains
-- Conducted data visualization and processing to analyze data sets and identify patterns and trends
-- Worked on evaluating the performance of human and machine classifiers
-- Utilized various data science tools and techniques such as regression analysis, clustering, and classification to extract insights from data 
-- Performed statistical tests and hypothesis tests to extract conclusions from data
+1.  This is an ordered list following a header.
+2.  This is an ordered list following a header.
+3.  This is an ordered list following a header.
 
-## Research Intern at SIFT
+###### Header 6
 
-- Conducted research to model and identify factors contributing to gender bias in different countries
-- Investigated swarm agent behaviors and developed models to better understand and predict their collective behavior patterns
-- Explored and implemented novel approaches for document recommendations, leveraging machine learning and social network algorithms
+| head1        | head two          | three |
+|:-------------|:------------------|:------|
+| ok           | good swedish fish | nice  |
+| out of stock | good and plenty   | nice  |
+| ok           | good `oreos`      | hmm   |
+| ok           | good `zoute` drop | yumm  |
 
-## AI Intern at STATS Perform
+### There's a horizontal rule below this.
 
-- Developed and implemented models to predict ball ownership and trajectory using raw tracking data from basketball games
-- Utilized deep recurrent neural networks and feature engineering to optimize model performance
-- Created visualizations and reports to communicate model performance and key insights to stakeholders and team members
+* * *
 
-## Research Assistant at University of Illinois Chicago  -->
+### Here is an unordered list:
+
+*   Item foo
+*   Item bar
+*   Item baz
+*   Item zip
+
+### And an ordered list:
+
+1.  Item one
+1.  Item two
+1.  Item three
+1.  Item four
+
+### And a nested list:
+
+- level 1 item
+  - level 2 item
+  - level 2 item
+    - level 3 item
+    - level 3 item
+- level 1 item
+  - level 2 item
+  - level 2 item
+  - level 2 item
+- level 1 item
+  - level 2 item
+  - level 2 item
+- level 1 item
+
+### Small image
+
+![Octocat](https://github.githubassets.com/images/icons/emoji/octocat.png)
+
+### Large image
+
+![Branching](https://guides.github.com/activities/hello-world/branching.png)
+
+
+### Definition lists can be used with HTML syntax.
+
+<dl>
+<dt>Name</dt>
+<dd>Godzilla</dd>
+<dt>Born</dt>
+<dd>1952</dd>
+<dt>Birthplace</dt>
+<dd>Japan</dd>
+<dt>Color</dt>
+<dd>Green</dd>
+</dl>
+
+```
+Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this.
+```
+
+```
+The final element.
+```
