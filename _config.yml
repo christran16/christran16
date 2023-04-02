@@ -5,16 +5,16 @@ description: <br>
   <br><br>
   <div class="row">
     <div class="column">
-      <a href="https://github.com/chris-tran-16"> <img src="files/github.png" alt="photo" style="width:32px;height:32px;" align="left" hspace="0"></a>
+      <a href="https://github.com/chris-tran-16"> <img src="files/github.png" alt="photo" style="width:32px;height:32px;float:left;margin-right:0;"></a>
     </div>
     <div class="column">
-      <a href="https://twitter.com/chris_tran16"> <img src="files/twitter_black.svg" alt="photo" style="width:32px;height:32px;" align="left" hspace="5"></a>
+      <a href="https://twitter.com/chris_tran16"> <img src="files/twitter_black.svg" alt="photo" style="width:32px;height:32px;float:left;margin-right:5px;"></a>
     </div>
     <div class="column">
-      <a href="https://www.linkedin.com/in/christran16/"><img src="files/linkedin.png" alt="photo" style="width:32px;height:32px;" align="left" hspace="0"></a>
+      <a href="https://www.linkedin.com/in/christran16/"><img src="files/linkedin.png" alt="photo" style="width:32px;height:32px;float:left;margin-right:0;"></a>
     </div>
     <div class="column">
-      <a href="mailto:chris.l.tran@gmail.com"><img src="files/email.png" alt="photo" style="width:32px;height:32px;" align="left" hspace="5"></a>
+      <a href="mailto:chris.l.tran@gmail.com"><img src="files/email.png" alt="photo" style="width:32px;height:32px;float:left;margin-right:5px;"></a>
     </div>
   </div>
 show_downloads: false
