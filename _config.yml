@@ -6,17 +6,16 @@ description: > # your text below (remove <br> elements if you don't need line br
   <br><br>
   <div class="row">
     <div class="column">
-      <a href="https://github.com/chris-tran-16"><img src="/files/github.png" alt="photo" style="width:32px;height:32px; margin-right: 0;"></a>
+      <a href="https://github.com/chris-tran-16"> <img src="files/github.png" alt="photo" style="width:32px;height:32px;"></a>
     </div>
     <div class="column">
-      <a href="https://twitter.com/chris_tran16"><img src="/files/twitter_black.svg" alt="photo" style="width:32px;height:32px; margin-right: 5px;"></a>
+      <a href="https://twitter.com/chris_tran16"> <img src="files/twitter_black.svg" alt="photo" style="width:32px;height:32px;""></a>
     </div>
     <div class="column">
-      <a href="https://www.linkedin.com/in/christran16/"><img src="/files/linkedin.png" alt="photo" style="width:32px;height:32px; margin-right: 0;"></a>
+      <a href="https://www.linkedin.com/in/christran16/"><img src="files/linkedin.png" alt="photo" style="width:32px;height:32px;"></a>
     </div>
     <div class="column">
-      <a href="mailto:chris.l.tran@gmail.com"><img src="/files/email.png" alt="photo" style="width:32px;height:32px; margin-right: 5px;"></a>
-    </div>
+      <a href="mailto:chris.l.tran@gmail.com"><img src="files/email.png" alt="photo" style="width:32px;height:32px;"></a>
   </div>
 show_downloads: false
 google_analytics:
