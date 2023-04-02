@@ -1,6 +1,6 @@
 title: Christopher Tran
 logo: /files/chris_head.jpg
-description: > # your text below (remove <br> elements if you don't need line breaks)
+description: # your text below (remove <br> elements if you don't need line breaks)
   <br>
   I am a Researcher at Smart Information Flow Technologies (SIFT) working on artificial intelligence and data science. I received my Ph.D. from the University of Illinois Chicago under the advisement of Elena Zheleva.
   <br><br>
@@ -16,6 +16,7 @@ description: > # your text below (remove <br> elements if you don't need line br
     </div>
     <div class="column">
       <a href="mailto:chris.l.tran@gmail.com"><img src="files/email.png" alt="photo" style="width:32px;height:32px;" align="left" hspace="5"></a>
+    </div>
   </div>
 show_downloads: false
 google_analytics:
