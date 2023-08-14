@@ -217,6 +217,8 @@
 \usepackage{calc}
 \usepackage{tabu}
 \usepackage{titlesec}
+\usepackage{ifthen}
+
 
 %\definecolor{colorlink}{HTML}{006699}
 \definecolor{colorlink}{HTML}{224191}
@@ -240,43 +242,43 @@
 % or the two address on opposite sides of the page
 
 \def\@printcentername{\begingroup
-	{\namefont\@name\\\\\qualificationfont\@qualification\par}
-		% do nothing
-		\vspace{-10ex}
-		\leavevmode\hbox to 
-		\textwidth{\hfil\@detailsbox{
-				\@emailone\ $|$ \@emailtwo\\
-				\@website\\
-				\@github\\
-				\@phone\\\\
-			}
-		}\par
-
-%\def\@printcentername{\begingroup
-%  {\namefont\@name\\\\\qualificationfont\@qualification\par}
-%  \@ifundefined{@addressone}{%
-%    % do nothing
-%    \vspace{-10ex}
-%    \leavevmode\hbox to 
-%    \textwidth{\hfil\@detailsbox{
-%    		\@emailone\ $|$ \@emailtwo\\
-%    		Webpage : \@website\\
-%    		Github : \@github\\
-%    		\@phone\\\\
-%    	}
-%    }\par
-%  }{
-%	  \vspace{-16ex}
-%	  \leavevmode\hbox to 
-%	  \textwidth{\hfil\@detailsbox{\@addressone\\
-%			               \@emailone\ $|$ \@emailtwo\\
-%				       Webpage : \@website\\
-%				       Github : \@github\\
-%				       \@phone\\\\}}\par
-%  }%
+  {\namefont\@name\\\\\qualificationfont\@qualification\par}
+  % do nothing
+  \vspace{-10ex}
+  \leavevmode\hbox to 
+  \textwidth{\hfil\@detailsbox{
+      \@emailone\\
+      \@website\\
+      \@github\\
+      \@phone\\\\
+    }
+  }\par
+  
+  %\def\@printcentername{\begingroup
+  %  {\namefont\@name\\\\\qualificationfont\@qualification\par}
+  %  \@ifundefined{@addressone}{%
+  %    % do nothing
+  %    \vspace{-10ex}
+  %    \leavevmode\hbox to 
+  %    \textwidth{\hfil\@detailsbox{
+  %    		\@emailone\ $|$ \@emailtwo\\
+  %    		Webpage : \@website\\
+  %    		Github : \@github\\
+  %    		\@phone\\\\
+  %    	}
+  %    }\par
+  %  }{
+  %	  \vspace{-16ex}
+  %	  \leavevmode\hbox to 
+  %	  \textwidth{\hfil\@detailsbox{\@addressone\\
+  %			               \@emailone\ $|$ \@emailtwo\\
+  %				       Webpage : \@website\\
+  %				       Github : \@github\\
+  %				       \@phone\\\\}}\par
+  %  }%
   % Add a horizontal line after name
   \color{lightestgray}\fullline
-\endgroup}
+  \endgroup}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % this is used to print the name and address at the top of
@@ -286,22 +288,22 @@
 \def\qualificationfont{\small\sc}
 \def\detailsfont{\footnotesize}
 \def\@linename{\begingroup
-  \def\\{ : }
-  {\namefont\@name}
-  \vskip 2pt
-  \fullline
-  \vskip 2pt
-  % where do you live?
-  \@ifundefined{@addressone}{%
+\def\\{ : }
+{\namefont\@name}
+\vskip 2pt
+\fullline
+\vskip 2pt
+% where do you live?
+\@ifundefined{@addressone}{%
   % do nothing
-  }{
-    \leavevmode\hbox to \textwidth
-      {\hfill\vbox{\hbox{\@addressone}
-		   \hbox{\@addresstwo}
-		   \hbox{\@addressthree}
-		  }
-      }\par
-  }
+}{
+  \leavevmode\hbox to \textwidth
+  {\hfill\vbox{\hbox{\@addressone}
+      \hbox{\@addresstwo}
+      \hbox{\@addressthree}
+    }
+  }\par
+}
 \endgroup}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -336,12 +338,12 @@
 \sectionskip=3.5ex plus 1ex minus -.2ex % values stolen from LaTeX
 
 \def\newsectionwidth#1{%
-		     \sectionwidth=#1
-		     \textwidth=\resumewidth
-		     \advance\textwidth-\sectionwidth
-		     \hsize=\textwidth
-		     \hoffset=\sectionwidth
-		     \addtolength{\hoffset}{1ex}
+  \sectionwidth=#1
+  \textwidth=\resumewidth
+  \advance\textwidth-\sectionwidth
+  \hsize=\textwidth
+  \hoffset=\sectionwidth
+  \addtolength{\hoffset}{1ex}
 }
 
 
@@ -363,93 +365,93 @@
 % \end{verbatim}
 
 \def\boxed@sectiontitle#1{%
-  % this macro may be called in a tabular.  Special code must be written to 
-  % accomodate this.  In LaTeX, a tabular is made out of hboxes. TeX never goes 
-  % into horizontal mode because of this; it only gets into vertical mode and 
-  % restricted horizontal mode.  Certain  indenting problems must be handled 
-  % because of this.  They are delt with at the end of this routine. It is also 
-  % necessary to close the hbox that was created before the \section and create 
-  % a new one when this macro has ended. This macro therefore simulates a \kill, 
-  % so that any text before the \section not be printed.  The proper use is 
-  % therefore ...
-  % text\\
-  % \section{foo}
-  % more text\\
-  % ...
-  \ifx\\\@tabcr    	% is this in a tabular? (this *should* work but is a cludge)
-    \@stopfield 	% the is the first part of a \kill
-   \else
-     \@@par			% This will end the previous paragraph if needed and go into 
-     				% vertical mode.  If this was already in vertical mode then 
-                    % the \par does nothing.
+% this macro may be called in a tabular.  Special code must be written to 
+% accomodate this.  In LaTeX, a tabular is made out of hboxes. TeX never goes 
+% into horizontal mode because of this; it only gets into vertical mode and 
+% restricted horizontal mode.  Certain  indenting problems must be handled 
+% because of this.  They are delt with at the end of this routine. It is also 
+% necessary to close the hbox that was created before the \section and create 
+% a new one when this macro has ended. This macro therefore simulates a \kill, 
+% so that any text before the \section not be printed.  The proper use is 
+% therefore ...
+% text\\
+% \section{foo}
+% more text\\
+% ...
+\ifx\\\@tabcr    	% is this in a tabular? (this *should* work but is a cludge)
+  \@stopfield 	% the is the first part of a \kill
+\else
+  \@@par			% This will end the previous paragraph if needed and go into 
+  % vertical mode.  If this was already in vertical mode then 
+  % the \par does nothing.
+  
+\fi
+\begingroup
+\everypar={}
+\def\par{\@@par}
+\let\\=\@normalcr
+\addpenalty{\@secpenalty}	% this would be a good place for a page break
+% \@secpenalty is what LaTeX uses before its
+% section's.  It happens to be -300
 
-  \fi
-  \begingroup
-  \everypar={}
-  \def\par{\@@par}
-  \let\\=\@normalcr
-  \addpenalty{\@secpenalty}	% this would be a good place for a page break
-			    			% \@secpenalty is what LaTeX uses before its
-			    			% section's.  It happens to be -300
-                            
-  \addvspace{\sectionskip}  % put in a bit of glue
-  % The following hbox will be contributed to the page list without going into 
-  % horizontal mode.  Therefore, any \parindent's, \parshape's, \leftskip will 
-  % be ignored but \hoffset's are not.  The result is that the box will only by 
-  % \hoffset. This is what I want
-  \hbox to 0pt{
+\addvspace{\sectionskip}  % put in a bit of glue
+% The following hbox will be contributed to the page list without going into 
+% horizontal mode.  Therefore, any \parindent's, \parshape's, \leftskip will 
+% be ignored but \hoffset's are not.  The result is that the box will only by 
+% \hoffset. This is what I want
+\hbox to 0pt{
     \hss	% this is an llap.  In other words, this glue will shrink by the 
-    		% width of the stuff in the vbox (\sectionwidth) into the left 
-            % margin and then insert the contents of the vbox.
+    % width of the stuff in the vbox (\sectionwidth) into the left 
+    % margin and then insert the contents of the vbox.
     \vtop to 0pt{	% make a 0pt height paragraph, with the baseline at the 
-    				% lined up with the baseline of the first box in the list
-      \leftskip=0pt
-      \hsize=\sectionwidth
-      \textwidth=\sectionwidth
-      \raggedright	% you don't want this filled out to the right margin
-      % \\sectionfont
-      \sectionfont
-      \textcolor{midgray}{#1}\vss		% Go into horizontal mode; do the paragraph; go into 
-      				% vertical mode; add some negative glue to give a box of 0pt 
-                    % height and depth
-    }
+        % lined up with the baseline of the first box in the list
+        \leftskip=0pt
+        \hsize=\sectionwidth
+        \textwidth=\sectionwidth
+        \raggedright	% you don't want this filled out to the right margin
+        % \\sectionfont
+        \sectionfont
+        \textcolor{midgray}{#1}\vss		% Go into horizontal mode; do the paragraph; go into 
+        % vertical mode; add some negative glue to give a box of 0pt 
+        % height and depth
+      }
   }
-  \addpenalty{-\@secpenalty} % this would be a bad place for a page break
-  \vskip-\baselineskip	% when the next box is processed, baselineskip glue will
-  						% be added (the box has no depth because of the \vss; 
-                        % therefore, we don't have to worry about 
-                        % \lineskiplimit).  This -\baselineskip glue is to undo 
-                        % this.  \nointerlineskip doesn't work because the 
-                        % baseline of this line would be lined up with the top 
-                        % of the top of the next box.  We want the baselines 
-                        % lined up. It may have been possible to do this by 
-                        % forcing the baseline of this box to be the top of the 
-                        % box but then the interline skip between this box and 
-                        % the previous box would be off as the baselines of the 
-                        % this box (the one that being made above) and the 
-                        % previous line would be separated by \baselineskip 
-                        % (probably, it may be separted by the depth of the 
-                        % previous box + \lineskip) but as the baseline of this 
-                        % box has been moved to the top, the box's would 
-                        % separted by to much glue.  The exact amount being the 
-                        % height of this box.
-  \endgroup
-  \ifx\\\@tabcr		% is this in a tabular? (this *should* work but is a cludge) 
-  					% this is the second part of the \kill; it starts the next 
-                    % tabbing line Because this routine will never get into 
-                    % paragraph mode when used in tabbing the \parskip that is 
-                    % discussed below will never be inserted. Therefore it 
-                    % should not be negated as done below.
-    \@startline
-    \ignorespaces
-  \else
-    \vskip-\parskip		% The next thing to be contributed will be a paragraph. 
-    					% Right before being contributed though a \vskip\parskip 
-                        % will be inserted.  This is to negate it. I do consider 
-                        % this to be a bit of a cludge but I can not find a way 
-                        % to write \unskipfutureskip or a way to make TeX think 
-                        % that nothing has been contributed to the page list.
-  \fi
+\addpenalty{-\@secpenalty} % this would be a bad place for a page break
+\vskip-\baselineskip	% when the next box is processed, baselineskip glue will
+% be added (the box has no depth because of the \vss; 
+% therefore, we don't have to worry about 
+% \lineskiplimit).  This -\baselineskip glue is to undo 
+% this.  \nointerlineskip doesn't work because the 
+% baseline of this line would be lined up with the top 
+% of the top of the next box.  We want the baselines 
+% lined up. It may have been possible to do this by 
+% forcing the baseline of this box to be the top of the 
+% box but then the interline skip between this box and 
+% the previous box would be off as the baselines of the 
+% this box (the one that being made above) and the 
+% previous line would be separated by \baselineskip 
+% (probably, it may be separted by the depth of the 
+% previous box + \lineskip) but as the baseline of this 
+% box has been moved to the top, the box's would 
+% separted by to much glue.  The exact amount being the 
+% height of this box.
+\endgroup
+\ifx\\\@tabcr		% is this in a tabular? (this *should* work but is a cludge) 
+  % this is the second part of the \kill; it starts the next 
+  % tabbing line Because this routine will never get into 
+  % paragraph mode when used in tabbing the \parskip that is 
+  % discussed below will never be inserted. Therefore it 
+  % should not be negated as done below.
+  \@startline
+  \ignorespaces
+\else
+  \vskip-\parskip		% The next thing to be contributed will be a paragraph. 
+  % Right before being contributed though a \vskip\parskip 
+  % will be inserted.  This is to negate it. I do consider 
+  % this to be a bit of a cludge but I can not find a way 
+  % to write \unskipfutureskip or a way to make TeX think 
+  % that nothing has been contributed to the page list.
+\fi
 }
 
 
@@ -457,26 +459,26 @@
 % This is for sectiontitles that are entirely above the section text
 %
 \def\unboxed@sectiontitle#1{
-  \ifx\\\@tabcr % see boxed@sectiontitle for explation
-    \@stopfield
-   \else
-     \@@par
-  \fi
-  \begingroup
-  \everypar={}
-  \def\par{\@@par}
-  \def\\{ }
-  \addpenalty{\@secpenalty}
-  \addvspace{\sectionskip}
-  \hbox to 0pt{\hss\hbox to \sectionwidth{\sectionfont#1\hss}}
-  \addpenalty{-\@secpenalty} % this would be a bad place for a page break
-  \endgroup
-  \ifx\\\@tabcr   % see boxed@sectiontitle for explation
-    \@startline
-  \else
-    \vskip-\parskip
-  \fi
-  \ignorespaces
+\ifx\\\@tabcr % see boxed@sectiontitle for explation
+  \@stopfield
+\else
+  \@@par
+\fi
+\begingroup
+\everypar={}
+\def\par{\@@par}
+\def\\{ }
+\addpenalty{\@secpenalty}
+\addvspace{\sectionskip}
+\hbox to 0pt{\hss\hbox to \sectionwidth{\sectionfont#1\hss}}
+\addpenalty{-\@secpenalty} % this would be a bad place for a page break
+\endgroup
+\ifx\\\@tabcr   % see boxed@sectiontitle for explation
+  \@startline
+\else
+  \vskip-\parskip
+\fi
+\ignorespaces
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -487,9 +489,9 @@
 % multiple lines) with the body of the text next to it 
 \let\@@section\relax
 \def\ds@overlapped{\ifx\@@section\relax\newsectionwidth{0.5in}\let
-  \@@section\unboxed@sectiontitle\fi}
+    \@@section\unboxed@sectiontitle\fi}
 \def\ds@margin{\ifx\@@section\relax\newsectionwidth{1.3in}\let
-  \@@section\boxed@sectiontitle\fi}
+    \@@section\boxed@sectiontitle\fi}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % DEFAULTS: (some of them)
@@ -519,24 +521,24 @@
 \definecolor{MyColor}{HTML}{C43141}
 
 \def\fullline{
-%  \textcolor{lightergray}{\hspace*{-\hoffset}\rule{\sectionwidth}{2.5pt}}
-%  \textcolor{lightestgray}{\hspace*{0pt}\rule{\resumewidth-\sectionwidth}{2.5pt}}
-	\textcolor{lorange}
-	{
-		\hspace*{-\hoffset}
-%		\rule{\resumewidth+\sectionwidth}
-		\rule{\resumewidth}
-		{2.5pt}
-	}
-	\vspace{-3ex}
+  %  \textcolor{lightergray}{\hspace*{-\hoffset}\rule{\sectionwidth}{2.5pt}}
+  %  \textcolor{lightestgray}{\hspace*{0pt}\rule{\resumewidth-\sectionwidth}{2.5pt}}
+  \textcolor{lorange}
+  {
+    \hspace*{-\hoffset}
+    %		\rule{\resumewidth+\sectionwidth}
+    \rule{\resumewidth}
+    {2.5pt}
+  }
+  \vspace{-3ex}
 }
 
 \def\sectionline{
-	
-%	\textcolor{lightergray}{\hspace*{-\hoffset}\rule{\resumewidth}{2.5pt}}
-%	\textcolor{lightestgray}{\hspace*{-\hoffset}\rule{\resumewidth}{2.5pt}}
-	\textcolor{morange}{\hspace*{-\hoffset}\rule{\sectionwidth}{2.0pt}}
-	\textcolor{lorange}{\hspace*{0pt}\rule{\textwidth}{1.5pt}}
+
+  %	\textcolor{lightergray}{\hspace*{-\hoffset}\rule{\resumewidth}{2.5pt}}
+  %	\textcolor{lightestgray}{\hspace*{-\hoffset}\rule{\resumewidth}{2.5pt}}
+  \textcolor{morange}{\hspace*{-\hoffset}\rule{\sectionwidth}{2.0pt}}
+  \textcolor{lorange}{\hspace*{0pt}\rule{\textwidth}{1.5pt}}
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -546,10 +548,10 @@
   \textcolor{lightgray}
   {
     \detailsfont{
-			\begin{tabular}[t]{
+      \begin{tabular}[t]{
         @{}r@{\extracolsep{\fill}}
-      }
-				#1
+        }
+        #1
       \end{tabular}
     }
   }
@@ -558,14 +560,14 @@
 \def\@descriptionbox#1{
   \textcolor{verydarkgray}
   {
-			\taburulecolor{lightestgray}
-			\hspace{0.5ex}
-			{
-        \tabulinesep=0.8mm
-			  \begin{tabu} to \sectionwidth {p{\textwidth-3ex}}
-				  #1
-        \end{tabu}
-     } 
+    \taburulecolor{lightestgray}
+    \hspace{0.5ex}
+    {
+      \tabulinesep=0.8mm
+      \begin{tabu} to \sectionwidth {p{\textwidth-3ex}}
+        #1
+      \end{tabu}
+    }
   }
 }
 
@@ -603,7 +605,7 @@
 \def\address#1{
   \@ifundefined{@addressone}{\def\@addressone{#1}}
   {\@ifundefined{@addresstwo}{\def\@addresstwo{#1}}
-  {\def\@addressthree{#1}}}}
+    {\def\@addressthree{#1}}}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % if you want to print your name and address is a slightly
@@ -615,7 +617,7 @@
   \leftskip=-\hoffset	    % I use leftskip to move things to the left as 
   \advance\textwidth\hoffset% changing hoffset doesn't work. But this
   \hsize=\textwidth	     	% doesn't really work as hboxes are rules
-			     			% are unaffeted
+  % are unaffeted
   \let\par=\@@par
   \parindent=0pt
   \parskip=0pt
@@ -627,7 +629,7 @@
 % all of the resume goes in the resume environment
 
 \newenvironment{resume}{\begingroup
-		       \@ifundefined{@opening}{\opening}{}
+  \@ifundefined{@opening}{\opening}{}
 }{\endgroup}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -645,10 +647,10 @@
   % \@columnwidth = \textwidth / #1
   \@columnwidth=\textwidth \divide\@columnwidth by #1
   \begin{tabular*}{\textwidth}[t]%
-	{*{#1}{@{}p{\@columnwidth}@{\extracolsep{\fill}}}}
-}
-
-\def\endncolumn{\end{tabular*}}
+    {*{#1}{@{}p{\@columnwidth}@{\extracolsep{\fill}}}}
+    }
+    
+    \def\endncolumn{\end{tabular*}}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -720,32 +722,35 @@
 
 \newcounter{numberofcolumns}
 \newenvironment{format}{
-  \def\end@line@head{\append@tabular@head{tabular@text}\tabular@text={}
-    \c@numberofcolumns 0}
-  \def\end@line@tail{\append@tabular@tail{tabular@text}\tabular@text={}
-    \c@numberofcolumns 0}
-  \tabular@text={}
-  \tabular@head={}
-  \tabular@tail={}
-  \c@numberofcolumns 0
-  \let\\=\end@line@head
-  \def\employer##1{\advance\c@numberofcolumns 1
-		   \@format{employer}{##1}
-		   \append@tabular@text{employer}}
-  \def\location##1{\advance\c@numberofcolumns 1
-		   \@format{location}{##1}
-		   \append@tabular@text{location}}
-  \def\dates##1{\advance\c@numberofcolumns 1
-		\@format{dates}{##1}
-		\append@tabular@text{dates}}
-  \def\title##1{\advance\c@numberofcolumns 1
-		 \@format{title}{##1}
-		\append@tabular@text{title}}
-  \def\body{\iftoks\tabular@head\undefined@token\then
-	    \else
-	      \@append{\noexpand\\}\to\tabular@head
-	    \skotfi
-	    \let\\=\end@line@tail}}{}
+\def\end@line@head{\append@tabular@head{tabular@text}\tabular@text={}
+\c@numberofcolumns 0}
+\def\end@line@tail{\append@tabular@tail{tabular@text}\tabular@text={}
+\c@numberofcolumns 0}
+\tabular@text={}
+\tabular@head={}
+\tabular@tail={}
+\c@numberofcolumns 0
+\let\\=\end@line@head
+\def\employer##1{\advance\c@numberofcolumns 1
+  \@format{employer}{##1}
+  \append@tabular@text{employer}}
+\def\location##1{\advance\c@numberofcolumns 1
+  \@format{location}{##1}
+  \append@tabular@text{location}}
+\def\dates##1{\advance\c@numberofcolumns 1
+  \@format{dates}{##1}
+  \append@tabular@text{dates}}
+\def\title##1{\advance\c@numberofcolumns 1
+  \@format{title}{##1}
+  \append@tabular@text{title}}
+\def\body{\iftoks\tabular@head\undefined@token\then
+  \else
+  \@append{\noexpand\\}\to\tabular@head
+  \skotfi
+  \let\\=\end@line@tail}}{}
+
+\newboolean{useaccomplishments}
+\setboolean{useaccomplishments}{false}
 
 \newenvironment{project}{
   \renewcommand{\title}[1]{\def\projtitle{##1}}
@@ -753,16 +758,20 @@
   \renewcommand{\supervisor}[1]{\def\projsupervisor{##1}}
   \renewcommand{\duration}[1]{\def\projduration{##1}}
   \renewcommand{\description}[1]{\def\projdesc{##1}}
+  % \newcommand{\accomplishments}[1]{\def\projaccom{##1}}
+  \newcommand{\accomplishments}[1]{\def\projaccom{##1}\setboolean{useaccomplishments}{true}}
 }{
-	\cusemph{\projtitle}\\
+  \cusemph{\projtitle}\\
   % \projlocation\\
-	\textcolor{darkgray}{\textit{\projsupervisor}} 
+  \textcolor{darkgray}{\textit{\projsupervisor}}
   \hfill\textcolor{darkgray}{\textit{\projduration}}
   \\
-	% \vspace{1ex}\\
+  % \vspace{1ex}\\
   % \small\@descriptionbox{\projdesc}
   \small{\projdesc}
-	% \vspace{1ex}\\
+  % \vspace{1ex}\\
+  % \small{\projaccom}
+  \ifthenelse{\boolean{useaccomplishments}}{\\ \small{\projaccom}}{}
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -786,9 +795,9 @@
 
 \let \then = \empty
 \def \iftoks #1#2\then #3\else #4\skotfi{
-		\edef \1{\the #1}
-		\edef \2{\the #2}
-		\ifx \1\2\then #3\else #4\fi}
+  \edef \1{\the #1}
+  \edef \2{\the #2}
+  \ifx \1\2\then #3\else #4\fi}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -803,12 +812,12 @@
 %
 
 \def\append@tabular@text#1{%
-\iftoks\tabular@text\undefined@token\then
+  \iftoks\tabular@text\undefined@token\then
   \global\tabular@text=\expandafter{\csname @#1\endcsname}
-\else
+  \else
   \@append{&}\to\tabular@text
   \@append{\csname @#1\endcsname}\to\tabular@text
-\skotfi
+  \skotfi
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -824,16 +833,16 @@
 \def\append@tabular@head#1{%
   \ifnum\the\c@numberofcolumns=0\relax
   \else
-    \iftoks\tabular@head\undefined@token\then
-      \relax
-    \else
-      \@append{\noexpand\\}\to\tabular@head
-      \@append{\noexpand\penalty-\@secpenalty}\to\tabular@head
+  \iftoks\tabular@head\undefined@token\then
+    \relax
+  \else
+    \@append{\noexpand\\}\to\tabular@head
+    \@append{\noexpand\penalty-\@secpenalty}\to\tabular@head
     \skotfi
     \@append{\noexpand\begin{ncolumn}}\to\tabular@head
-    \@append{\expandafter{\the\c@numberofcolumns}}\to\tabular@head
-    \@append{\the\csname#1\endcsname}\to\tabular@head
-    \@append{\noexpand\end{ncolumn}}\to\tabular@head
+        \@append{\expandafter{\the\c@numberofcolumns}}\to\tabular@head
+        \@append{\the\csname#1\endcsname}\to\tabular@head
+        \@append{\noexpand\end{ncolumn}}\to\tabular@head
   \fi
 }
 
@@ -850,15 +859,15 @@
 \def\append@tabular@tail#1{%
   \ifnum\the\c@numberofcolumns=0\relax
   \else
-    \iftoks\tabular@tail\undefined@token\then
-    \else
-      \@append{\noexpand\\}\to\tabular@tail
-      \@append{\noexpand\penalty-\@secpenalty}\to\tabular@tail
+  \iftoks\tabular@tail\undefined@token\then
+  \else
+    \@append{\noexpand\\}\to\tabular@tail
+    \@append{\noexpand\penalty-\@secpenalty}\to\tabular@tail
     \skotfi
     \@append{\noexpand\begin{ncolumn}}\to\tabular@tail
-    \@append{\expandafter{\the\c@numberofcolumns}}\to\tabular@tail
-    \@append{\the\csname#1\endcsname}\to\tabular@tail
-    \@append{\noexpand\end{ncolumn}}\to\tabular@tail
+        \@append{\expandafter{\the\c@numberofcolumns}}\to\tabular@tail
+        \@append{\the\csname#1\endcsname}\to\tabular@tail
+        \@append{\noexpand\end{ncolumn}}\to\tabular@tail
   \fi
 }
 
@@ -868,19 +877,19 @@
 % in the ... describe the position.
 % don't put the \dates \location etc in here. define them before hand
 \newenvironment{position}%
-  {%
-   \begingroup
-     \par
-       \the\tabular@head
-%     \addpenalty{-\@secpenalty}% bad place for a page break
-     \penalty -\@secpenalty % bad place for a page break
-     \penalty 10000
-     \ignorespaces
-  }{%
-       \the\tabular@tail
-%     \addpenalty{\@secpenalty}% good place for a page break
-     \penalty \@secpenalty % good place for a page break
-    \endgroup
+{%
+  \begingroup
+  \par
+  \the\tabular@head
+  %     \addpenalty{-\@secpenalty}% bad place for a page break
+  \penalty -\@secpenalty % bad place for a page break
+  \penalty 10000
+  \ignorespaces
+}{%
+  \the\tabular@tail
+  %     \addpenalty{\@secpenalty}% good place for a page break
+  \penalty \@secpenalty % good place for a page break
+  \endgroup
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -909,18 +918,18 @@
 \parskip \baselineskip
 \setcounter{secnumdepth}{0}
 \def\@listI{\leftmargin\leftmargini
-\topsep 0pt 
-\parskip 0pt
-\partopsep 2pt plus 2pt
-\parsep 2pt plus 2pt
-\itemsep \parsep}
+  \topsep 0pt 
+  \parskip 0pt
+  \partopsep 2pt plus 2pt
+  \parsep 2pt plus 2pt
+  \itemsep \parsep}
 
 \pagestyle{empty}  % don't want page numbers
 
 \begin{format}
-\title{l}\employer{r}\\
-\location{l}\dates{r}\\
-\body\\
+  \title{l}\employer{r}\\
+  \location{l}\dates{r}\\
+  \body\\
 \end{format}
 
 \let\section\@@section

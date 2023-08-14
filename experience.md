@@ -4,8 +4,11 @@ layout: default
 
 # Experience
 
+### Data Scientist at the U.S. Securities and Exchange Commission
+July 2023 - Present
+
 ### Researcher at Smart Information Flow Technologies (SIFT)
-July 2022 - Present
+July 2022 - July 2023
 
 ### Research Intern at Smart Information Flow Technologies (SIFT)
 May 2019 - November 2019
